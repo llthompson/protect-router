@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { TextField, Button, Container } from "@mui/material";
+import cookie from 'cookie';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -23,7 +24,15 @@ const Login = () => {
   const login = (e) => {
     e.preventDefault();
     // set cookie here
-    // set loggedIn = true and max-age = 60*1000 (one minute)
+    // set loggedIn = true and max-age = 60 (one minute)
+
+    document.cookie = cookie.serialize("loggedIn", "true", { maxAge: 60 });
+
+    // Delete a cookie
+    // document.cookie = cookie.serialize("loggedIn", null, { maxAge: 0 });
+
+    // To check your new cookies
+    console.log(cookie.parse(document.cookie));
 
     navigate("/");
   };
