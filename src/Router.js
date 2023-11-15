@@ -18,9 +18,7 @@ const checkAuth = () => {
 // Write ProtectedRoute function here
 
 const ProtectedRoute = (props) => {
-
     const { component: Component, ...rest } = props;
-
     return (
         checkAuth() === true ? (<Component {...rest} />) : (<Navigate to="/login" />)
     );
@@ -35,9 +33,6 @@ const Router = () => {
             <Route path='/' element={<ProtectedRoute component={Home} />} />
             <Route path='/about' element={<ProtectedRoute component={About} />} />
             <Route path='/car/:id' element={<ProtectedRoute component={Car} />} />
-            {/* <Route path="/" element={<Home/>} /> */}
-            {/* <Route path="/about" element={<About/>} /> */}
-            {/* <Route path="/car/:id" element={<Car/>} /> */}
         </Routes>
     );
 };

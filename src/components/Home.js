@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { Card, CardContent, CardActions, Divider } from '@mui/material'
 import cars from '../cars.json'
 
+
 const Home = () => {
     console.log('CARS', cars)
     return (

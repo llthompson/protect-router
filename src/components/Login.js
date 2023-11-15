@@ -23,17 +23,8 @@ const Login = () => {
 
   const login = (e) => {
     e.preventDefault();
-    // set cookie here
-    // set loggedIn = true and max-age = 60 (one minute)
-
     document.cookie = cookie.serialize("loggedIn", "true", { maxAge: 60 });
-
-    // Delete a cookie
-    // document.cookie = cookie.serialize("loggedIn", null, { maxAge: 0 });
-
-    // To check your new cookies
-    console.log(cookie.parse(document.cookie));
-
+    // console.log(cookie.parse(document.cookie));
     navigate("/");
   };
 
